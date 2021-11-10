@@ -5,7 +5,7 @@ import NavBar from './components/NavBar/NavBar';
 
 
 
-function App () {
+function Home () {
   const [apiData, setApiData ] = useState('');
 
   useEffect(( ) => {
@@ -57,4 +57,4 @@ function App () {
   
 
 
-export default App;
+export default Home;
