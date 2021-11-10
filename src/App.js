@@ -2,6 +2,11 @@ import React, { useState , useEffect } from 'react';
 import Form from './/components/Forms/form';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
+import {Route, Switch, BrowserRouter as Router, } from 'react-router-dom';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+
+
 
 
 
@@ -38,9 +43,21 @@ function App () {
         <NavBar />
         </div>   
       </h1>  
-      <div>
-        <Form className='container' apiData={apiData}/>
-      </div>
+      <Router>
+      <Switch>
+        <Route exact path="/">
+          <Form className='container' apiData={apiData}/>
+        </Route> 
+        <Route exact path="/about">
+          <About />
+        </Route>
+        <Route exact path="/contact">
+          <Contact />
+        </Route>
+        
+
+      </Switch>
+      </Router>
     </div>  
    )
   };
